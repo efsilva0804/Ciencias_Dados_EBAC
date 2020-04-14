@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $categorias = [];
 $categorias[] = 'Infantil';
 $categorias[] = 'Adolescente';
@@ -13,7 +15,7 @@ $idade = $_POST['idade'];
 
 if(empty($nome))
 {
-    echo  'O nome não pode ser vazio';
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode ser vazio';
     return;
 }
 
